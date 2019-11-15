@@ -1,5 +1,6 @@
-# cluster_setup
-Basis: Install guide with Warewulf + Slurm (https://openhpc.community/downloads/)
+# This cluster guide is thanks to the following as basis: 
+
+ Install guide with Warewulf + Slurm (https://openhpc.community/downloads/)
 
 ### 1. Requirements /  assumption
 #### - BASH command-line
