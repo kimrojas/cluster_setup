@@ -11,7 +11,7 @@ Disclaimer: This repository is actually meant to guide me when I forget how to d
 This Setup guide is will have two set of files:
 
 | Set | Description |
-|---|---|
+|:---:|---|
 | Manual | This is the line-by-line guidelines for the setup |
 | Rapid Deployment Protocol | This is a script (that should be edited for use in specific system) that can be used to do all the commands in "Manual" set |
 
