@@ -1,4 +1,8 @@
-# This cluster guide is thanks to the following as basis: 
+# Kraken cluster setup
+
+![alt text](https://github.com/kimrojas/cluster_setup/blob/master/kraken.JPG)
+
+This cluster guide is thanks to the following as basis: 
 
  Install guide with Warewulf + Slurm (https://openhpc.community/downloads/)
 
