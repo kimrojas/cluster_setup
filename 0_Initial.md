@@ -29,8 +29,21 @@ Notes: \
 
 ```
 echo "192.168.1.254 master" >> /etc/hosts
-
 hostnamectl set-hostnname master
 ```
 
+### Disable firewall
+
+```
+systemctl disable firewalld
+systemctl stop firewalld
+```
+
+### Disable selinux
+
+edit file to `SELINUX=disabled`
+
+```
+vi /etc/selinux/config
+```
 
