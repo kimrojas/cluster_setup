@@ -29,6 +29,7 @@ Notes: \
 
 ```
 echo "192.168.1.254 master" >> /etc/hosts
+
 hostnamectl set-hostnname master
 ```
 
