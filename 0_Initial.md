@@ -9,7 +9,7 @@ Create a bootable drive (CentOS) using:
 
 Notes: \
 [a] as of time of writing CentOS 7.7 was the latest version \
-[b] disk allocation can be automatic but I prefer */opt* to have better
+[b] disk allocation can be automatic but I prefer */opt* to have more available disk as apps will be placed there as well
 
 ### Summarize Cluster information
 
