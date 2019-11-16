@@ -28,7 +28,8 @@ Notes: \
 ### Edit host file
 
 ```
-% echo "192.168.1.254 master" >> /etc/hosts
+echo "192.168.1.254 master" >> /etc/hosts
+hostnamectl set-hostnname master
 ```
 
 
