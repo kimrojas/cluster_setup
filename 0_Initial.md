@@ -15,6 +15,9 @@ Notes: \
 
 | Machine | Description |
 |---|---|
-|Master|Hostname: master|
+|Master|Hostname: master \
+Private Network: eth0 10.20.100.200 (MAC:192.168.1.254)|
+
+
 ||Private Network: eth0 10.20.100.200 (MAC:192.168.1.254) |
 ||Public Network: eth0 10.20.100.200 (MAC:192.168.1.254) 
