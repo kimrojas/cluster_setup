@@ -41,9 +41,30 @@ systemctl stop firewalld
 
 ### Disable selinux
 
-edit file to `SELINUX=disabled`
-
 ```
 vi /etc/selinux/config
 ```
+
+edit file to `SELINUX=disabled`
+
+### Reboot master node
+
+`reboot`
+
+### Update CentOS
+
+`yum -y update`
+
+### Enable reading of Exfat USB
+
+```
+yum -y install epel-release
+rpm -v --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
+rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+yum -y install exfat-utils fuse-exfat
+```
+
+### Install htop
+`yum -y install htop`
+
 
