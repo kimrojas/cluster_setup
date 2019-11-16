@@ -9,6 +9,7 @@ This setup repository should be helpful in creating a cluster setup based on **O
 Disclaimer: This repository is actually meant to guide me when I forget how to do this.   
 
 This Setup guide is will have two set of files:
+
 | Set | Description |
 |---|---|
 | Manual | This is the line-by-line guidelines for the setup |
