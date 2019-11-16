@@ -13,8 +13,8 @@ Notes: \
 
 ### Summarize Cluster information
 
-| Machine | Description |
-|---|---|
-|Master|Hostname: master |
-||Private Network: eth0 10.20.100.200 (MAC:192.168.1.254) |
-||Public Network: eth0 10.20.100.200 (MAC:192.168.1.254) 
+| Machine | Category| Description |
+|---|---|---|
+|Master|Hostname: | master |
+||Private Network: | eth0 10.20.100.200 (MAC:192.168.1.254) |
+||Public Network: | eth0 10.20.100.200 (MAC:192.168.1.254) 
