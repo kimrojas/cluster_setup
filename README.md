@@ -8,6 +8,15 @@ This setup repository should be helpful in creating a cluster setup based on **O
 
 Disclaimer: This repository is actually meant to guide me when I forget how to do this.   
 
+This Setup guide is will have two set of files:
+| Set | Description |
+|---|---|
+| Manual | This is the line-by-line guidelines for the setup |
+| Rapid Deployment Protocol | This is a script (that should be edited for use in specific system) that can be used to do all the commands in "Manual" set |
+
+
+
+
 References:
 1. https://github.com/manbaritone/OpenHPC-Installation
 2. https://github.com/dasandata/Open_HPC
