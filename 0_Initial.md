@@ -1,4 +1,4 @@
-# Initialization
+# 0. Initialization
 
 ### OS installation
 
