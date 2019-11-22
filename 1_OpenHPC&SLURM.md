@@ -299,21 +299,25 @@ Please boot computers via PXE boot
 ##### Check run time by:
 `pdsh -w c[1-2] uptime`
 
-## RESOURCE MANAGER SETUP
-`
+#### RESOURCE MANAGER SETUP
+```
 systemctl restart munge
 systemctl restart slurmctld
 pdsh -w c[1-2] systemctl restart slurmd
-`
-## TEST MUNGE
+````
+#### TEST MUNGE
+```
 munge -n | unmunge
 munge -n | ssh c1 unmunge
 munge -n | ssh c2 unmunge
+```
 
-## TEST SLURM
+#### TEST SLURM
+```
 systemctl status slurmctld
 ssh c1 systemctl status slurmd
 ssh c2 systemctl status slurmd
+```
 
-## TEST RESOURCES
-scontrol show nodes
+#### TEST RESOURCES
+`scontrol show nodes`
