@@ -133,6 +133,7 @@ systemctl enable nfs-server
 ```
 chroot $CHROOT systemctl enable ntpd
 echo "server 192.168.5.1" >> $CHROOT/etc/ntp.conf
+```
 
 #### Update SLURM configuration 
 
@@ -248,43 +249,62 @@ echo "drivers += overlay" >> $WW_CONF
 wwbootstrap `uname -r`
 ```
 
-### CREATE VIRTUAL NODE FILE SYSTEM (VNFS) IMAGE
-wwvnfs --chroot $CHROOT
+##### CREATE VIRTUAL NODE FILE SYSTEM (VNFS) IMAGE
 
-## DEFINE GATEWAY
+```
+wwvnfs --chroot $CHROOT
+```
+
+#### DEFINE GATEWAY
+
+```
 echo "GATEWAYDEV=eno1" > /tmp/network.$$
 wwsh -y file import /tmp/network.$$ --name network
 wwsh -y file set network --path /etc/sysconfig/network --mode=0644 --uid=0 
 wwsh file list
+```
 
-## REGISTER NODES
+#### REGISTER NODES
+
+```
 wwsh -y node new c1 --ipaddr=192.168.5.51 --hwaddr=70:4d:7b:a0:f8:56 -D eno1
 wwsh -y node new c2 --ipaddr=192.168.5.52 --hwaddr=70:4d:7b:a0:fa:48 -D eno1
 wwsh node list
+```
 
-## DEFINE VNFS FOR NODES
+#### DEFINE VNFS FOR NODES
+
+```
 wwsh -y provision set "c1" --vnfs=centos7 --bootstrap=`uname -r` --files=dynamic_hosts,passwd,group,shadow,slurm.conf,munge.key,network
 wwsh -y provision set "c2" --vnfs=centos7 --bootstrap=`uname -r` --files=dynamic_hosts,passwd,group,shadow,slurm.conf,munge.key,network
 wwsh provision list
+```
 
-## RESTART GANGLIA
+#### RESTART GANGLIA
+```
 systemctl restart gmond 
 systemctl restart gmetad 
 systemctl restart dhcpd 
 wwsh pxe update
-
-## Sync all file to compute node
+```
+#### Sync all file to compute node
+```
 wwsh file resync
+```
 
-## COMPUTE NODE INSTALLATION ( BOOT VIA PXE) 
-# Check run time by:
-pdsh -w c[1-2] uptime
+## 1.3: Compute node installation ( BOOT VIA PXE) 
+
+Please boot computers via PXE boot
+
+##### Check run time by:
+`pdsh -w c[1-2] uptime`
 
 ## RESOURCE MANAGER SETUP
+`
 systemctl restart munge
 systemctl restart slurmctld
 pdsh -w c[1-2] systemctl restart slurmd
-
+`
 ## TEST MUNGE
 munge -n | unmunge
 munge -n | ssh c1 unmunge
