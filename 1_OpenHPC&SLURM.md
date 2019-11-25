@@ -304,7 +304,7 @@ Please boot computers via PXE boot
 systemctl restart munge
 systemctl restart slurmctld
 pdsh -w c[1-2] systemctl restart slurmd
-````
+```
 #### TEST MUNGE
 ```
 munge -n | unmunge
@@ -320,4 +320,6 @@ ssh c2 systemctl status slurmd
 ```
 
 #### TEST RESOURCES
-`scontrol show nodes`
+```
+scontrol show nodes
+```
