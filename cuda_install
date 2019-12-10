@@ -1,53 +1,59 @@
+# CUDA
+
+## Install cuda repository on Head node
+
+Note: For centos 7
 
 ```
-yum -y install http://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-repo-rhel8-10.2.89-1.x86_64.rpm
+yum -y install \
+ http://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/cuda-repo-rhel7-8.0.61-1.x86_64.rpm
 ```
 
 OUTPUT:
 
 ```
 Loaded plugins: fastestmirror, langpacks
-cuda-repo-rhel8-10.2.89-1.x86_64.rpm                     | 6.6 kB     00:00     
-Examining /var/tmp/yum-root-SRlxAa/cuda-repo-rhel8-10.2.89-1.x86_64.rpm: cuda-repo-rhel8-10.2.89-1.x86_64
-Marking /var/tmp/yum-root-SRlxAa/cuda-repo-rhel8-10.2.89-1.x86_64.rpm to be installed
+cuda-repo-rhel7-8.0.61-1.x86_64.rpm | 6.2 kB     00:00     
+Examining /var/tmp/yum-root-SRlxAa/cuda-repo-rhel7-8.0.61-1.x86_64.rpm: cuda-repo-rhel7-8.0.61-1.x86_64
+Marking /var/tmp/yum-root-SRlxAa/cuda-repo-rhel7-8.0.61-1.x86_64.rpm to be installed
 Resolving Dependencies
 --> Running transaction check
----> Package cuda-repo-rhel8.x86_64 0:10.2.89-1 will be installed
+---> Package cuda-repo-rhel7.x86_64 0:8.0.61-1 will be installed
 --> Finished Dependency Resolution
 
 Dependencies Resolved
 
-================================================================================
- Package          Arch    Version      Repository                          Size
-================================================================================
+===========================================================
+ Package
+    Arch   Version  Repository                        Size
+===========================================================
 Installing:
- cuda-repo-rhel8  x86_64  10.2.89-1    /cuda-repo-rhel8-10.2.89-1.x86_64  216  
+ cuda-repo-rhel7
+    x86_64 8.0.61-1 /cuda-repo-rhel7-8.0.61-1.x86_64 204  
 
 Transaction Summary
-================================================================================
+===========================================================
 Install  1 Package
 
-Total size: 216  
-Installed size: 216  
+Total size: 204  
+Installed size: 204  
 Downloading packages:
 Running transaction check
 Running transaction test
 Transaction test succeeded
 Running transaction
-  Installing : cuda-repo-rhel8-10.2.89-1.x86_64                             1/1 
-  Verifying  : cuda-repo-rhel8-10.2.89-1.x86_64                             1/1 
+  Installing : cuda-repo-rhel7-8.0.61-1.x86_64         1/1 
+  Verifying  : cuda-repo-rhel7-8.0.61-1.x86_64         1/1 
 
 Installed:
-  cuda-repo-rhel8.x86_64 0:10.2.89-1                                            
+  cuda-repo-rhel7.x86_64 0:8.0.61-1                        
 
 Complete!
-
 ```
 
-## Install to image
+## Install cuda on node image 
 
 ```
-yum -y install --installroot ${CHROOT} http://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-repo-rhel8-10.2.89-1.x86_64.rpm
+yum -y install --installroot $CHROOT \
+ http://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/cuda-repo-rhel7-8.0.61-1.x86_64.rpm
 ```
-
-
