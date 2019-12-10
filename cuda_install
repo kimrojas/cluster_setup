@@ -43,3 +43,11 @@ Installed:
 Complete!
 
 ```
+
+## Install to image
+
+```
+yum -y install --installroot ${CHROOT} http://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-repo-rhel8-10.2.89-1.x86_64.rpm
+```
+
+
