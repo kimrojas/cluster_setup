@@ -1,0 +1,34 @@
+# Configure commands
+
+1. ./configure
+Time: 933 seconds
+
+2. ./configure --with-scalapack=intel
+Time: 967 933
+
+3. ./configure --enable-parallel --with-scalapack=intel --enable-openmp
+Time: 1037 1006
+
+4. Full force mkl (PDSSC + CDFT+SCALAPACK+BLACS)
+
+export MPIF90=mpiifort CC=mpiicc FC=ifort F77=mpiifort
+export BLAS_LIBS=" -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_cdft_core -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_lp64 -lpthread -lm -ldl"
+export LAPACK_LIBS=" -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_cdft_core -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_lp64 -lpthread -lm -ldl"
+export SCALAPACK_LIBS=" -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_cdft_core -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_lp64 -lpthread -lm -ldl"
+export MPI_LIBS="-L/opt/ohpc/pub/compiler/intel/impi/2019.5.281/intel64/lib -lmpi"
+
+./configure --with-scalapack=intel
+
+Change make.inc for the following values:
+
+FFLAGS = -O3 -assume byterecl -g traceback
+DFLAGS = -D__DFTI -D__MPI -D__SCALAPACK
+
+5. not so full force mkl (SCALAPACK+BLACS)
+
+export MPIF90=mpiifort CC=mpiicc FC=ifort F77=mpiifort
+
+export BLAS_LIBS="  -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_lp64 -lpthread -lm -ldl"
+export LAPACK_LIBS=" -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_lp64 -lpthread -lm -ldl"
+export SCALAPACK_LIBS=" -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_lp64 -lpthread -lm -ldl"
+export MPI_LIBS="-L/opt/ohpc/pub/compiler/intel/impi/2019.5.281/intel64/lib -lmpi"
