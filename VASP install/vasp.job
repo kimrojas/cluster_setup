@@ -14,5 +14,5 @@ module purge
 module load intel impi VASP
 ulimit -s unlimited
 
-mpirun vasp_std
+mpirun vasp_std | tee progress.txt
 
