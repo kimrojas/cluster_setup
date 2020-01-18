@@ -1,0 +1,9 @@
+# Run these commands on shutdown event / power outtage
+# This restarts the services
+
+'''
+pdsh -w c[1-6] uptime
+systemctl restart munge
+systemctl restart slurmctld
+pdsh -w c[1-6] systemctl restart slurmd
+'''
