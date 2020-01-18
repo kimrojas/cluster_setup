@@ -44,8 +44,10 @@ change parameter to -DCACHE_SIZE = 16000
 change parameter to -DMPI_BLOCK=32000
 
 change parameter to -mkl=cluster
-change parameter OFLAG = -03 -ipo -xAVX (FOR OLD CPU)
-change parameter OFLAG = -03 -ipo -xCORE -AVX2 (FOR NEW CPU)
-Note in my system, I can use xCORE AVX2 only for my nodes (6th gen intel cpu)
+
+change parameter OFLAG = -03 -ipo -xCORE-AVX2 (FOR NEW CPU)
+Note in my system, I can use xCORE AVX2 only for my nodes (6th gen intel cpu) \
+but not in my head node which uses an old Intel E5. I can still compile vasp \
+using the E5 but it won't run. Havent tried to make it run yet. 
 
 clear options in BLACS SCALAPACK
