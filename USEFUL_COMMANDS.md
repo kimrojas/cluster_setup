@@ -5,3 +5,19 @@
 or 
 
 `find . -type f -print0 | xargs -0 -I {} chmod 644 {}`
+
+#### Making functions and alias in bashrc or bash_profile
+
+##### Alias
+
+`alias my_alias="command"`
+
+##### Function
+
+```
+myfunction () {
+    echo "this is my function"
+    echo "This is the function with positional argument $1"
+}
+```
+
